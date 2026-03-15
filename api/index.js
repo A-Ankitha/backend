@@ -5,10 +5,14 @@ const app = express();
 const cors = require('cors')
 app.use(cors())
 
+app.get("/", (req, res) => {
+  res.send("Task Manager API running");
+});
+
 const {task} = require('../routes/route');
 require('../connect/connect')
 
-app.use('/api/tasks',task)
+app.use('/',task)
 
 require('dotenv').config()
 
