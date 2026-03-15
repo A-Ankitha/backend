@@ -18,4 +18,4 @@ task.put('/:id', updateUser)
 //delete a user
 task.delete('/:id', deleteUser)
 
-module.exports = {task}
+module.exports = { router: task }

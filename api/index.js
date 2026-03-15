@@ -10,12 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+connectDB(process.env.MONGO_URI);
+
 app.get("/", (req, res) => {
   res.send("Task Manager API Running");
 });
 
 app.use("/api/v1", router);
-
-connectDB(process.env.MONGO_URI);
 
 module.exports = app;
